@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <div class="block-header">
+        <h2>DASHBOARD!</h2>
+    </div>
+	<!--TITULO-->
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Libros <span class="label bg-deep-orange">{{vm.libros.length}}</span></h1>
+		</div>
+	</div>
+
+	<!--FILTROS-->
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="header">
+					<h2>
+						BUSQUEDA 
+					</h2>
+				</div>
+				<div class="body">
+					<form>
+						<div class="row clearfix">
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+								<div class="form-group">
+									<div class="form-line">
+										<label class="form-label2">Título</label>
+										<input type="text" class="form-control" ng-model="vm.filtro_titulo" accion-enter="vm.cargarLibros()">
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+								<div class="form-group">
+									<div class="form-line">
+										<label class="form-label2">Año</label>
+										<input type="number" class="form-control" ng-model="vm.filtro_ano" accion-enter="vm.cargarLibros()">
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<button type="button" class="btn btn-primary btn-lg m-l-15 waves-effect" ng-click="vm.cargarLibros()">Buscar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--LISTA-->
+		
+	<div class="row">
+		<div class="col-md-12" ng-repeat="libro in vm.libros track by $index">
+			<div class="card">
+				<div class="header">
+					<h2>
+						<a href="/books/{{libro.name}}.pdf">{{libro.name}} </a>						
+						<small>{{libro.author}}</small>
+						<span class="label bg-deep-orange">{{libro.year}}</span>	
+					</h2>
+					
+				</div>
+				<div class="body" style="">
+					{{libro.description}}
+				</div>
+			</div>
+		</div>
+	</div>
+		
+</div>

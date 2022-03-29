@@ -1,0 +1,43 @@
+
+<div class="ui grid container">
+    
+    <div class="columns row">
+        <div class="sixteen wide column">
+            
+            <box1 titulo="Box 1 Test" icono="chess">
+            <form class="ui form">
+                <textfield label="Nombre" placeholder="Nombre 1" ng-model="vm.nombre" mensaje="Hola mundo"></textfield>
+                <rut placeholder="Place Holder" ng-model="vm.rut_cliente" />
+            </form>
+            </box1>
+        </div>
+    </div>
+    <br>
+    <div class="four column row">
+        
+        <div class="column" ng-repeat="libro in vm.libros">
+            <box1 titulo="{{libro.nombre | uppercase}}" icono="book">
+                <span class="ui red ribbon label">
+                    <i ng-click="vm.addLike(libro.id)" class="like icon"></i>
+                    {{libro.likes}}
+                </span>
+                
+                <form class="ui form">
+                <textfield label="Nombre" placeholder="Nombre 1" ng-model="vm.nombre" mensaje="Hola mundo"></textfield>
+                <rut placeholder="Place Holder" ng-model="vm.rut_cliente" />
+            </form>
+                <br>
+                
+                <span><a href="./#!/libro/{{libro.id}}" class="ui button">Ver libro</a></span>
+                <br />
+                <br />
+                <div class="ui blue labels">
+                    <a class="ui label" ng-repeat="l in libro.labels">
+                        {{l}}
+                    </a>
+                </div>
+            </box1>
+        </div>
+        
+    </div>
+</div>

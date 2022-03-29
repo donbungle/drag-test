@@ -1,0 +1,55 @@
+
+<div class="ui grid container">
+    
+    <div class="columns row">
+        <div class="sixteen wide column">
+            <div class="ui segment">HOLA</div>
+        </div>
+        <br /><br /><br />
+        <div class="six wide column">
+            <div dragula="'bag-left'" class="ui list">
+                <div class="item">
+                    <box1 titulo="Box 1 Test" icono="chess" class="" data-tipo="box1" >
+                        <div class="contenido">
+                            CONTENIDO
+                        </div>
+                    </box1>
+                </div>
+                <div class="item">
+                    <form class="ui form">
+                        <textfield label="Nombre"  mensaje="Hola mundo" modelo="vm.nombre" data-tipo="textfield"></textfield>
+                    </form>
+                </div>
+                <div class="item">
+                    <form class="ui form">
+                        <rut ng-model="vm.rut_cliente" modelo="vm.rut" />
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        <div class="ten wide column">
+            <div id="codigo" dragula="'bag-left'" class="ui segment" style="height: 100%;">
+              
+            </div>
+        </div>
+        <div class="sixteen wide column">
+            <h1>Preview:</h1>
+            <div ng-bind-html="vm.codigo">
+                
+            </div>
+        </div>
+        <div class="eight wide column">
+            <h1>Preview:</h1>
+            <div ng-bind="vm.codigo">
+                
+            </div>
+        </div>
+        <div class="eight wide column">
+            <h1>JSON:</h1>
+            <div>
+                {{vm.json | json}}
+            </div>
+        </div>
+    </div>
+</div>

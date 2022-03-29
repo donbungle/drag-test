@@ -1,0 +1,35 @@
+<div class="ui grid container">
+    <div class="one column row">
+        <div class="column">
+            <h1 style="text-align: center;">Colores</h1>
+        </div>
+    </div>
+    <div class="two column row">
+        <div class="column">
+            <div class="ui fluid icon input">
+                <input placeholder="Escribe un color" type="text" ng-model="vm.color">
+                <i class="smile icon"></i>
+            </div>
+            <div class="ui">
+                <button class="ui red button" ng-click="vm.color = 'red'">Red</button>
+                <button class="ui orange button" ng-click="vm.color = 'orange'">Orange</button>
+                <button class="ui yellow button" ng-click="vm.color = 'yellow'">Yellow</button>
+                <button class="ui olive button" ng-click="vm.color = 'olive'">Olive</button>
+                <button class="ui green button" ng-click="vm.color = 'green'">Green</button><br>
+                <button class="ui teal button" ng-click="vm.color = 'teal'">Teal</button>
+                <button class="ui blue button" ng-click="vm.color = 'blue'">Blue</button>
+                <button class="ui violet button" ng-click="vm.color = 'violet'">Violet</button>
+                <button class="ui purple button" ng-click="vm.color = 'purple'">Purple</button>
+                <button class="ui pink button" ng-click="vm.color = 'pink'">Pink</button>
+                <button class="ui brown button" ng-click="vm.color = 'brown'">Brown</button>
+                <button class="ui grey button" ng-click="vm.color = 'grey'">Grey</button>
+                <button class="ui black button" ng-click="vm.color = 'black'">Black</button>
+            </div>
+        </div>
+        <div class="column">
+            <h1 class="ui massive" style="color: {{vm.color}};font-size: 60px;">
+                {{vm.color}}
+            </h1>
+        </div>
+    </div>
+</div>

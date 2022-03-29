@@ -1,0 +1,36 @@
+<div class="ui one column doubling stackable grid container">
+    <div class="column">
+        <h1>LIBRERIA</h1>  
+    </div>
+    <div class="column">   
+        <div class="ui divided items">
+            <div class="item" ng-repeat="libro in vm.libros">
+                <div class="content">
+                    
+                    <a href="#/libro/{{libro.id}}" ui-sref="libro({ id: libro.id })" class="header">
+                        {{libro.nombre}} 
+                    </a>
+                    <div class="ui labeled button right floated" tabindex="0">
+                        <div class="ui red button" ng-click="vm.addLike(libro.id)">
+                            <i class="heart icon"></i> Likes
+                        </div>
+                        <a class="ui basic red left pointing label">
+                            {{libro.likes}}
+                        </a>
+                    </div>
+                    <div class="meta">
+                        <span class="cinema">{{libro.ano}}</span>
+                    </div>
+                    <div class="description">
+                        <p></p>
+                    </div>
+                    <div class="extra">
+                        <div class="ui label" ng-repeat="label in libro.labels">{{label}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+

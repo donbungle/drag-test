@@ -1,0 +1,5 @@
+<div class="textfield field {{vm.es_valido ? '' : 'error'}}">
+    <label>{{vm.label}}</label>
+    <textbox placeholder="vm.placeholder" ng-model="vm.modelo" />
+    <small ng-show="vm.mostrar_mensaje">{{vm.mensaje}}</small>
+</div>

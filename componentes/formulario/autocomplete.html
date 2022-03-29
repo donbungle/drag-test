@@ -1,0 +1,31 @@
+<div>
+    <md-content class="md-padding2" style="overflow: inherit">
+        <form ng-submit="$event.preventDefault()">
+            <label id="favoriteStateLabel">Favorite State</label>
+            <md-autocomplete
+                ng-disabled="vm.isDisabled"
+                md-no-cache="vm.noCache"
+                md-selected-item="vm.selectedItem"
+                md-search-text-change="vm.searchTextChange(vm.searchText)"
+                md-search-text="vm.searchText"
+                md-selected-item-change="vm.selectedItemChange(item)"
+                md-items="item in vm.querySearch(vm.searchText)"
+                md-item-text="item.display"
+                md-min-length="3"
+                placeholder="Ej. python"
+                input-aria-labelledby="favoriteStateLabel"
+                input-aria-describedby="autocompleteDetailedDescription">
+                <md-item-template>
+                    <span md-highlight-text="vm.searchText" md-highlight-flags="ig">{{item.display}}</span>
+                </md-item-template>
+                <md-not-found>
+                    No states matching "{{vm.searchText}}" were found.
+                </md-not-found>
+            </md-autocomplete>
+            <br/>
+            <md-checkbox ng-model="vm.simulateQuery">Simulate query for results?</md-checkbox>
+            <md-checkbox ng-model="vm.noCache">Disable caching of queries?</md-checkbox>
+            <md-checkbox ng-model="vm.isDisabled">Disable the input?</md-checkbox>
+        </form>
+    </md-content>
+</div>
